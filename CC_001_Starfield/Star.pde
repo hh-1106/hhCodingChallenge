@@ -26,7 +26,7 @@ class Star {
     //println(x,z,sx);
     float sy = map(y/z, 0, 1, 0, height/2);
 
-    float r = map(z, 0, width, 4, 0);
+    float r = map(z, 0, width, 31, 0);
     strokeWeight(r);
 
     float px = map(x/pz, 0, 1, 0, width/2);

@@ -73,7 +73,7 @@ class Particle {
         float sa = random(40, 60);
 
         if (noise(pos.x, pos.y)<0.18) {
-          strokeWeight(size);
+          strokeWeight(size*2);
           br = 100;
           sa = 20;
         }

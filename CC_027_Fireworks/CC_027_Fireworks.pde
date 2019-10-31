@@ -21,10 +21,10 @@ void draw() {
   rect(0, 0, width, height);
   
 
-  //println(frameRate);
+  println(frameRate);
   //println(fireworks.size());
 
-  if (random(1) < 0.02) {
+  if (random(1) < 0.06) {
     fireworks.add(new Firework());
   }
 
