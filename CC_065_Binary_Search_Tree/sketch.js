@@ -1,7 +1,7 @@
 var tree
 
 function setup() {
-  createCanvas(600, 400)
+  createCanvas(800, 1000)
   background(51)
   textAlign(CENTER,CENTER)
 

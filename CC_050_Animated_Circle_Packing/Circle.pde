@@ -22,7 +22,7 @@ class Circle {
 
   void grow() {
     if (growing) {
-      r = r + 0.5;
+      r = r + 1;
     }
   }
 

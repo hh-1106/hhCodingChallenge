@@ -1,23 +1,26 @@
-function Node(val, x, y) {
+function Node(val) {
   this.value = val
   this.left = null
   this.right = null
-  this.x = x
-  this.y = y
+  this.x = 0
+  this.y = 0
+  this.layer = 0
 
   this.addNode = function(n) {
     if (n.value < this.value) {
       if (this.left == null) {
         this.left = n
-        this.left.x = this.x - 50
-        this.left.y = this.y + 36
+        this.left.layer = this.layer + 1
+        this.left.x = this.x - 150/this.left.layer
+        this.left.y = this.y + 50
       } else
         this.left.addNode(n)
     } else if (n.value > this.value) {
       if (this.right == null) {
         this.right = n
-        this.right.x = this.x + 50
-        this.right.y = this.y + 30
+        this.right.layer = this.layer + 1
+        this.right.x = this.x + 150/this.right.layer
+        this.right.y = this.y + 50
       } else
         this.right.addNode(n)
     }

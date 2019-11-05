@@ -7,6 +7,7 @@ function Tree() {
       this.root = n
       this.root.x = width/2
       this.root.y = 16
+      this.layer = 1
     } else {
       this.root.addNode(n)
     }

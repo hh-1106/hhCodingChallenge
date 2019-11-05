@@ -12,7 +12,7 @@ void setup() {
   frameRate(100);
 
   rectMode(CENTER);
-  colorMode(HSB);
+  //colorMode(HSB);
   img = loadImage("hh.png");
   circles = new ArrayList<Circle>();
 }
@@ -23,16 +23,16 @@ void draw() {
   image(img, 0, 0);
 
   if (alpha < 256) {
-    alpha += (frameCount<200) ?.1 :3;
+    alpha += (frameCount<700) ?.03 :1;
   }
-  //println(frameRate, frameCount, alpha);
+  println(frameRate, frameCount, alpha);
   addCirlce();
   update();
 }
 
 
 void addCirlce() {
-  int total = 100;
+  int total = (int)random(10,50);
   int count = 0;
 
   while (count <  total) {
@@ -66,6 +66,8 @@ void update() {
   }
 }
 
+
+
 Circle newCircle() {
   float x = random(width);
   float y = random(height);
@@ -82,6 +84,8 @@ Circle newCircle() {
   if (valid) {
     int index = int(x) + int(y) * img.width;
     color col = img.pixels[index];
+    //color cola = color(red(col), green(col), blue(col), random(150,250));
+    
     return new Circle(x, y, col);
   } else {
     return null;
