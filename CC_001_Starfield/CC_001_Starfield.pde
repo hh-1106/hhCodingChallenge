@@ -2,7 +2,7 @@
 // https://youtu.be/17WoOqgXsRM
 
 PImage back;
-Star[] stars = new Star[1];
+Star[] stars = new Star[100];
 float speed;
 
 void setup() {

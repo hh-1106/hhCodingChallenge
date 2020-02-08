@@ -1,5 +1,3 @@
-// Daniel Shiffman
-
 class Particle {
   PVector pos;
   PVector prePos;
@@ -15,6 +13,7 @@ class Particle {
     hu = hu_;
     pos = new PVector(x, y);
     vel = new PVector(noise(frameRate)*((random(1)<0.5) ?2 :-2), random(-22, -18));
+    //vel = new PVector(noise(frameRate)*((random(1)<0.5) ?2 :-2), random(-20, -16));
     acc = new PVector(0, 0);
   }
 

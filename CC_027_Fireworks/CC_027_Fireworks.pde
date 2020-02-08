@@ -1,5 +1,3 @@
-// Daniel Shiffman
-
 ArrayList<Firework> fireworks;
 PImage back, girl;
 PVector gravity = new PVector(0, 0.3);
@@ -12,19 +10,21 @@ void setup() {
   fireworks = new ArrayList<Firework>();
   colorMode(HSB, 360, 100, 100, 100);
   background(0);
+  smooth();
   //frameRate(30);
 }
 
 void draw() {
+  
   noStroke();
   fill(0, 25);
   rect(0, 0, width, height);
   
 
-  println(frameRate);
+  //println(frameRate);
   //println(fireworks.size());
 
-  if (random(1) < 0.06) {
+  if (random(1) < 0.01) {
     fireworks.add(new Firework());
   }
 

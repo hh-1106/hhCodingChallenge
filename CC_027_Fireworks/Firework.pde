@@ -1,5 +1,3 @@
-// Daniel Shiffman
-
 class Firework {
 
   ArrayList<Particle> particles;

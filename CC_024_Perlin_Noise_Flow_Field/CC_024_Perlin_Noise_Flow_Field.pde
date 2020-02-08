@@ -6,13 +6,14 @@ FlowField wind;
 ArrayList<Firefly> fireflies;
 PImage back;
 
+
 int fScl = 20;
 int pNum = 1000;
 int mSensity = 10;
 
 void setup() {
+  //size(1200, 720);
   size(800, 450);
-  //size(560, 315);
   noCursor();
   back = loadImage("back.png");
   wind = new FlowField(fScl);
@@ -31,7 +32,7 @@ void draw() {
   image(back,0,0);
 
   wind.update();
-  //flowfield.display();
+  //wind.display();
 
   for (Firefly f : fireflies) {
     f.follow(wind);

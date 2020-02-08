@@ -32,7 +32,7 @@ public class FlowField {
       }
       yoff += inc;
     }
-    zoff += 0.0001 ;
+    zoff += 0.001 ;
   }
 
   void display() {
@@ -41,7 +41,7 @@ public class FlowField {
         int index = x + y * cols;
         PVector v = vectors[index];
         stroke(0, 50);
-        strokeWeight(10);
+        strokeWeight(5);
         pushMatrix();
         translate(x * scl, y * scl);
         rotate(v.heading());

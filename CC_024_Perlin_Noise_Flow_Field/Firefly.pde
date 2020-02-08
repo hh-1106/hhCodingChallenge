@@ -15,8 +15,8 @@ public class Firefly {
     pos = born;
     vel = new PVector(0, 0);
     acc = new PVector(0, 0);
-    //prevPos = pos.copy();
-    col = color(168, random(180, 220), 152, 5);
+    prevPos = pos.copy();
+    col = color(168, random(180, 220), 152, 50);
   }
 
   void update() {
@@ -35,13 +35,13 @@ public class Firefly {
   }
 
   void show() {
-    if (random(1)> 0.8) stroke(255, 5);
+    if (random(1)> 0.8) stroke(255, 50);
     else stroke(col);
     if (random(1)> 0.85) strokeWeight(random(10, 30));
     else strokeWeight(random(3, 10));
-    point(pos.x, pos.y);
+    //point(pos.x, pos.y);
 
-    //line(pos.x, pos.y, prevPos.x, prevPos.y);
+    line(pos.x, pos.y, prevPos.x, prevPos.y);
     //updatePreviousPos();
   }
 
@@ -50,7 +50,7 @@ public class Firefly {
     if (pos.x < 0)      pos.x = width;    
     if (pos.y > height) pos.y = 0;
     if (pos.y < 0)      pos.y = height;
-    //updatePreviousPos();
+    updatePreviousPos();
   }
 
   void updatePreviousPos() {
