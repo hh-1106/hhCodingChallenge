@@ -1,3 +1,9 @@
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
+
 var tree
 
 function setup() {

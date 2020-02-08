@@ -1,3 +1,9 @@
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
+
 CellSystem cs; //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>//
 img2path wh;
 nCoVSystem ns;
@@ -22,11 +28,11 @@ void setup() {
 
 
 void draw() {
-  background(255);  
+  background(255);
   cs.feedSize = 1;
 
-  cs.update();  
-  cs.show(); 
+  cs.update();
+  cs.show();
   cs.swap();
 
   ns.update();

@@ -1,3 +1,9 @@
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
+
 import peasy.*;
 
 float x = 0.01;
@@ -44,7 +50,7 @@ void draw() {
   for (PVector v : points) {
     fill(hu, 255, 255);
     stroke(25, 128);
-    vertex(v.x, v.y, v.z);    
+    vertex(v.x, v.y, v.z);
     PVector offset = PVector.random3D();
     offset.mult(0.005);
     v.add(offset);
@@ -55,7 +61,7 @@ void draw() {
 
   }
   endShape();
-  
+
 
 }
 
@@ -64,8 +70,8 @@ PVector eye = new PVector(width*0.5, height*0.5, (height/2.0) / tan(PI*30.0 / 18
 void cameraFollow(PVector target_) {
 
   camera(
-    eye.x, eye.y, eye.z-map(mouseX, 0, width, 0, 100), 
-    target_.x, target_.y, target_.z, // target 
+    eye.x, eye.y, eye.z-map(mouseX, 0, width, 0, 100),
+    target_.x, target_.y, target_.z, // target
     0, 1, 0
     );
 

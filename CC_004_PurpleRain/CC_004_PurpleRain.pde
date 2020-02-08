@@ -1,6 +1,8 @@
-// Daniel Shiffman
-// https://youtu.be/AaGK-fj-BAM
-// https://www.jianshu.com/p/cae1c4f89d8f
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
 
 Drop[] drops = new Drop[800];
 PImage back;

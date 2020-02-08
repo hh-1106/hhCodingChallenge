@@ -1,3 +1,9 @@
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
+
 import geomerative.*;
 
 
@@ -51,7 +57,7 @@ void setup() {
     Fourier = dft(x);
     SortComplex(Fourier);
   }
-  
+
 }
 
 void draw() {
@@ -111,7 +117,7 @@ PVector showfourier(float x, float y, ArrayList<Complex> fourier) {
     float theta = frequency * time + phase;
 
     pos.x += amplitude * cos(theta);
-    pos.y += amplitude * sin(theta); 
+    pos.y += amplitude * sin(theta);
     noFill();
     stroke(255, 150);
     ellipse(prev.x, prev.y, diameter, diameter);

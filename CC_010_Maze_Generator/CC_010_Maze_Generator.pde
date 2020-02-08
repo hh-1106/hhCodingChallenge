@@ -1,4 +1,9 @@
-// https://en.wikipedia.org/wiki/Maze_generation_algorithm
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  https://en.wikipedia.org/wiki/Maze_generation_algorithm
+  Author: hh
+*/
+
 
 int cols, rows;
 int w = 20;
@@ -28,7 +33,7 @@ void setup() {
 
 void draw() {
   background(229, 230, 230);
-  
+
     frameRate(int(map(mouseX,0,width,5,500)));
   for (int i = 0; i < grid.size(); i++) {
     grid.get(i).show();
@@ -36,7 +41,7 @@ void draw() {
 
   current.visited = true;
   current.highlight();
-  
+
   // STEP 1
   Cell next = current.checkNeighbors();
   if (next != null) {

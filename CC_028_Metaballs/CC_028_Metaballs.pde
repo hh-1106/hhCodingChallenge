@@ -1,6 +1,8 @@
-// Daniel Shiffman
-// https://youtu.be/ccYLb7cLB1I
-// https://www.jianshu.com/p/0432b8fa31b4
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
 
 Blob[] blobs = new Blob[25];
 PImage back;
@@ -30,10 +32,10 @@ void draw() {
       float d = 100;
       for (Blob b : blobs) {
         d = dist(x, y, b.pos.x, b.pos.y);
-        if ( d<random(110, 140) || 
+        if ( d<random(110, 140) ||
           ( d>random(0, 30) && d<random(40, 100) )) {
           ke[index] = true;
-        }        
+        }
         sum += 21 * b.r / d;
       }
       if (ke[index])

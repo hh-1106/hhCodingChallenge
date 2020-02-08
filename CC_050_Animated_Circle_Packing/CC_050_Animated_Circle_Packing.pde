@@ -1,6 +1,8 @@
-// Daniel Shiffman
-// https://youtu.be/QHEQuoIKgNE
-// https://www.jianshu.com/p/887a79f53dfa
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
 
 ArrayList<Circle> circles;
 PImage img;
@@ -85,7 +87,7 @@ Circle newCircle() {
     int index = int(x) + int(y) * img.width;
     color col = img.pixels[index];
     //color cola = color(red(col), green(col), blue(col), random(150,250));
-    
+
     return new Circle(x, y, col);
   } else {
     return null;

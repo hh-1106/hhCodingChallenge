@@ -1,3 +1,9 @@
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
+
 ArrayList<Firework> fireworks;
 PImage back, girl;
 PVector gravity = new PVector(0, 0.3);
@@ -15,11 +21,11 @@ void setup() {
 }
 
 void draw() {
-  
+
   noStroke();
   fill(0, 25);
   rect(0, 0, width, height);
-  
+
 
   //println(frameRate);
   //println(fireworks.size());
@@ -35,7 +41,7 @@ void draw() {
       fireworks.remove(i);
     }
   }
-  
+
   tint(360, 8*fireworks.size());
   image(girl,-178,371,160*7,90*7);
 

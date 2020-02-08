@@ -1,3 +1,9 @@
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
+
 Ship ship;
 Flower[] flowers = new Flower[6];
 ArrayList<Drop> drops = new ArrayList<Drop>();
@@ -14,7 +20,7 @@ void setup() {
 
 void draw() {
   background(51);
-  
+
   if (frameCount%10 ==0) {
     Drop drop = new Drop(ship.x, ship.y);
     drops.add(drop);
@@ -70,11 +76,11 @@ void keyReleased() {
 void mouseMoved() {
   ship.x = mouseX;
   ship.y = mouseY;
-  
+
 }
 
-void keyPressed() {       
-  
+void keyPressed() {
+
   for (Drop d : drops) {
     d.r = 520;
   }

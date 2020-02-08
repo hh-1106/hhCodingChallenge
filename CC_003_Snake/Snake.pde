@@ -1,6 +1,3 @@
-// Daniel Shiffman
-// https://youtu.be/AaGK-fj-BAM
-
 class Snake {
   float x = 0;
   float y = 0;
@@ -20,11 +17,11 @@ class Snake {
       tail.add(new PVector(x, y));
     }
 
-    x = (x<=food.x) 
+    x = (x<=food.x)
       ?lerp(ceil(x/scl), food.x/scl, 0.005)*scl
       :lerp(floor(x/scl), food.x/scl, 0.005)*scl;
     if (dist(x, 0, food.x, 0) == 0) {
-      y = (y<=food.y) 
+      y = (y<=food.y)
       ?lerp(ceil(y/scl), food.y/scl, 0.005)*scl
       :lerp(floor(y/scl), food.y/scl, 0.005)*scl;
     }

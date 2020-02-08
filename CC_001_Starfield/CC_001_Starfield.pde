@@ -1,12 +1,15 @@
-// Daniel Shiffman
-// https://youtu.be/17WoOqgXsRM
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
 
 PImage back;
 Star[] stars = new Star[100];
 float speed;
 
 void setup() {
-  size(800, 450);   
+  size(800, 450);
   back = loadImage("back.png");
   //stroke(255);
 

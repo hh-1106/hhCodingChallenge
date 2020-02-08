@@ -1,6 +1,8 @@
-// Daniel Shiffman
-// https://youtu.be/BjoM9oKOAKY
-// https://www.jianshu.com/p/ea0ec8b2e37a
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
 
 FlowField wind;
 ArrayList<Firefly> fireflies;

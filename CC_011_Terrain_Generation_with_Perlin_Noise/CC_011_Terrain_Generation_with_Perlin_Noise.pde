@@ -1,3 +1,9 @@
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
+
 int cols, rows;    // 地形:列数,行数
 int w = 1000;      //      宽
 int h = 800;       //      高
@@ -19,7 +25,7 @@ void draw() {
   lights();    // 开启环境光
   flying -= map(mouseY*mouseY, height*height,0, 0,0.55);
   // 飞行效果(前进速度) 与鼠标高度的平方成正比
-          
+
   float yoff = flying; // 噪声空间量y
   for (int y = 0; y < rows; y++) {
     float xoff = 0;    // // 噪声空间量x
@@ -40,7 +46,7 @@ void draw() {
   translate(width/2, height/2+100);  // 移动地形位置
   rotateX(PI/3.2);                   // 旋转地形平面
   translate(-w/2, -h/2);             // 再次移动
-  
+
   // 绘制地形
   for (int y = 0; y < rows-1; y++) {
     beginShape(TRIANGLE_STRIP);      // 三角形状

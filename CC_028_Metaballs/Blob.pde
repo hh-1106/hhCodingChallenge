@@ -1,7 +1,3 @@
-// Daniel Shiffman
-// https://youtu.be/ccYLb7cLB1I
-// https://www.jianshu.com/p/0432b8fa31b4
-
 class Blob {
   PVector pos;
   float r;
@@ -15,7 +11,7 @@ class Blob {
   }
 
   void update() {
-    pos.add(vel); 
+    pos.add(vel);
     if (pos.x > width || pos.x < 0) {
       vel.x *= -1;
     }

@@ -1,7 +1,3 @@
-// Daniel Shiffman
-// https://youtu.be/BjoM9oKOAKY
-// https://www.jianshu.com/p/ea0ec8b2e37a
-
 public class FlowField {
   PVector[] vectors;
   int cols, rows;
@@ -18,7 +14,7 @@ public class FlowField {
 
   void update() {
     float xoff = 0;
-    for (int y = 0; y < rows; y++) { 
+    for (int y = 0; y < rows; y++) {
       float yoff = 0;
       for (int x = 0; x < cols; x++) {
         float angle = noise(xoff, yoff, zoff) * TWO_PI * 4;
@@ -27,7 +23,7 @@ public class FlowField {
         int index = x + y * cols;
         v.setMag(1);
         vectors[index] = v;
-        
+
         xoff += inc;
       }
       yoff += inc;
@@ -36,7 +32,7 @@ public class FlowField {
   }
 
   void display() {
-    for (int y = 0; y < rows; y++) { 
+    for (int y = 0; y < rows; y++) {
       for (int x = 0; x < cols; x++) {
         int index = x + y * cols;
         PVector v = vectors[index];

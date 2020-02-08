@@ -1,5 +1,8 @@
-// Daniel Shiffman
-// https://youtu.be/AaGK-fj-BAM
+/*
+  Code after going through Daniel Shiffman's tutorials.
+  Author: hh
+*/
+
 
 Snake s;
 float scl = 15;

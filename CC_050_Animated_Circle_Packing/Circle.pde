@@ -1,7 +1,3 @@
-// Daniel Shiffman
-// https://youtu.be/QHEQuoIKgNE
-// https://www.jianshu.com/p/887a79f53dfa
-
 class Circle {
   float x;
   float y;

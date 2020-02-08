@@ -1,7 +1,3 @@
-// Daniel Shiffman
-// https://youtu.be/AaGK-fj-BAM
-// https://www.jianshu.com/p/cae1c4f89d8f
-
 class Drop {
   float x;
   float y;
@@ -15,7 +11,7 @@ class Drop {
     z  = random(0, 20);
     len = map(z, 0, 20, 10, 30);
     yspeed  = map(z, 0, 20, 1, 20);
-    
+
     yspeed = 10;
   }
 
@@ -34,7 +30,7 @@ class Drop {
     float thick = map(z, 0, 20, 1, 3);
     strokeWeight(thick);
     stroke(191+z, 254, 236);
-    
+
     line(x, y, x, y+len);
   }
 }

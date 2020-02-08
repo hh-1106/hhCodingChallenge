@@ -1,7 +1,3 @@
-// Daniel Shiffman
-// https://youtu.be/BjoM9oKOAKY
-// https://www.jianshu.com/p/ea0ec8b2e37a
-
 public class Firefly {
   PVector pos;
   PVector vel;
@@ -47,7 +43,7 @@ public class Firefly {
 
   void edges() {
     if (pos.x > width)  pos.x = 0;
-    if (pos.x < 0)      pos.x = width;    
+    if (pos.x < 0)      pos.x = width;
     if (pos.y > height) pos.y = 0;
     if (pos.y < 0)      pos.y = height;
     updatePreviousPos();
