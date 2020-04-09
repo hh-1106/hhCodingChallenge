@@ -7,6 +7,10 @@ class Leaf {
     pos.mult(random(width/2));
     pos.y -= height/4;
   }
+  
+  Leaf(PVector v) {
+    pos = v.copy();
+  }
 
   void reached() {
     reached = true;

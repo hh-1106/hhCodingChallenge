@@ -13,6 +13,12 @@ class Firework {
     //firework = new Particle(width/2+ 10, height, hu);
     particles = new ArrayList<Particle>();
   }
+  
+  Firework(float x) {
+    hu = random(360);
+    firework = new Particle(x, height, hu);
+    particles = new ArrayList<Particle>();
+  }
 
   boolean done() {
     return (firework == null && particles.isEmpty()) ?
@@ -31,7 +37,7 @@ class Firework {
     }        
     updatePixels();
     tint(360, time*size*0.5);
-    image(back, -430, 0, 1600, 900);
+    image(back, 0, 0, 1600, 900);
   }
 
   void run() {
