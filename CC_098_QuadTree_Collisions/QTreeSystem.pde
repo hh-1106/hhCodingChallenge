@@ -1,14 +1,32 @@
 /*
-  This is a Quadtree System
-  Make sure your particle class extends UserData
-  should refactor the qtree when the userdata change
-  remember to insert nodes to the qtree
-  show to view the tree
-  have fun
-  
-  Author: hh
-  after going through shiffman's Quadtree tutoriors
-*/
+ * This is a Quadtree System
+ * Make sure your particle class extends UserData
+ * should refactor the qtree when the userdata change
+ * remember to insert nodes to the qtree
+ * show to view the tree
+ * have fun
+ 
+ * Author: hh
+ * after going through shiffman's Quadtree tutoriors
+ */
+
+
+///////////////////////////////////////////////////////////////////////////////
+//public abstract class UserData {
+//  public boolean intersects(UserData other) {
+//    return false;
+//  }
+
+//  public abstract void move();
+//  public abstract void show();
+//}
+///////////////////////////////////////////////////////////////////////////////
+
+interface UserData {
+  public boolean intersects(Particle other);
+  public abstract void move();
+  abstract void show();
+}
 
 
 class QTreeSystem {
@@ -45,14 +63,6 @@ class QTreeSystem {
 
 
 ///////////////////////////////////////////////////////////////////////////////
-public abstract class UserData {
-  public boolean intersects(UserData other) {
-    return false;
-  }
-
-  public abstract void move();
-  public abstract void show();
-}
 
 class Node {
   float x;
