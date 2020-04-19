@@ -25,20 +25,20 @@ public class Firefly {
   void applyForce(PVector force) {
     float d = dist(mouseX, mouseY, pos.x, pos.y);
     if (d<mSensity) {
-      pos.x = lerp(pos.x, mouseX, 0.4);
-      pos.y = lerp(pos.y, mouseY, 0.4);
+      pos.x = lerp(pos.x, mouseX, 0.1);
+      pos.y = lerp(pos.y, mouseY, 0.1);
     } else acc.add(force);
   }
 
   void show() {
-    if (random(1)> 0.8) stroke(255, 50);
+    if (random(1)> 0.8) stroke(255, 20);
     else stroke(col);
-    if (random(1)> 0.85) strokeWeight(random(10, 30));
+    if (random(1)> 0.95) strokeWeight(random(10, 20));
     else strokeWeight(random(3, 10));
     //point(pos.x, pos.y);
 
     line(pos.x, pos.y, prevPos.x, prevPos.y);
-    //updatePreviousPos();
+ 
   }
 
   void edges() {

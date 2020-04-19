@@ -36,7 +36,7 @@ public class FlowField {
       for (int x = 0; x < cols; x++) {
         int index = x + y * cols;
         PVector v = vectors[index];
-        stroke(0, 50);
+        stroke(0, 5);
         strokeWeight(5);
         pushMatrix();
         translate(x * scl, y * scl);
