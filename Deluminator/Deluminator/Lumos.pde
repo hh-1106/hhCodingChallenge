@@ -1,38 +1,34 @@
 class Lumos {
   PVector pos, vel;
+  PVector loc;
+
   float r;
   float phase;
-  Timer timer;
+  boolean keep;
 
   Lumos() {
     init();
-    pos = new PVector(random(r, width - r), random(r, height - r));
+    loc = pos.copy();
   }
 
   Lumos(float x, float y) {
     init();
-    pos = new PVector(x, y);
+    loc = new PVector(x, y);
   }
 
   private void init() {
-    timer = new Timer();
-    r = random(10, 20) * 2;
+    pos = new PVector(random(r, width - r), random(r, height - r));
+    r = random(10, 20);
+    keep = false;
     phase = random(TWO_PI);
-    float spd = random(1, 5);
-    float dir = random(TWO_PI);
-    vel = PVector.fromAngle(dir).mult(spd);
+    vel = PVector.random2D();
+    vel.mult(random(1, 5));
   }
 
   void update() {
-    timer.update();
-    pos.add(vel);
-    edges();
-  }
-
-  void update(float dt) {
-    timer.update();
-    pos.add(vel.copy().mult(dt));
-    edges();
+    goBack();
+    //pos.add(vel);
+    //edges();
   }
 
   private void edges() {
@@ -46,16 +42,28 @@ class Lumos {
     }
   }
 
-  boolean isDead() {
-    return timer.isDead();
+  public void moveTo() {
+    float d = pos.dist(deluminator);
+    if (d < 0.1) return;
+
+    keep = true;
+    pos.lerp(deluminator, 0.02);
   }
 
-  void show() {
+  public void goBack() {
+    if (keep)  return;
+    float d = pos.dist(loc);
+    if (d < 0.1) return;
+    
+    pos.lerp(loc, 0.1);
+  }
+
+  public void show() {
     pushStyle();
     noFill();
     strokeWeight(1);
     stroke(0, 255, 255);
-    ellipse(pos.x, pos.y, r*2, r*2);
+    ellipse(pos.x, height-pos.y, r*2, r*2);
     popStyle();
   }
 }

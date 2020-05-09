@@ -1,15 +1,18 @@
 int MB_ATTR_LEN = 4;
-int MB_NUM = 20;
+int MB_LEN = 100;
 
 class LumosSystem {
   ArrayList<Lumos> lumos;
-  float[] mbs = new float[MB_NUM * MB_ATTR_LEN];  // metaballs
+  float[] mbs = new float[MB_LEN * MB_ATTR_LEN];  // metaballs
+  float halo = 0.5;
 
   LumosSystem( ) {
     lumos = new ArrayList<Lumos>();
-    for (int i = 0; i < MB_NUM; i++) {
+    for (int i = 0; i < MB_LEN; i++) {
       lumos.add(new Lumos());
     }
+    metaballShader.set("u_resolution", width*1., height*1.);
+    metaballShader.set("halo", 0.8);
   }
 
   void update() {
@@ -19,8 +22,8 @@ class LumosSystem {
     setAttr();
   }
 
-  void setAttr() {
-    for (int i = 0; i < MB_NUM; i++) {
+  private void setAttr() {
+    for (int i = 0; i < MB_LEN; i++) {
       mbs[i*MB_ATTR_LEN] = lumos.get(i).pos.x;
       mbs[i*MB_ATTR_LEN + 1] = lumos.get(i).pos.y;
       mbs[i*MB_ATTR_LEN + 2] = lumos.get(i).r;
@@ -43,5 +46,21 @@ class LumosSystem {
     for (Lumos lu : lumos) {
       lu.show();
     }
+  }
+
+  public void turnOn() {
+    for (Lumos lu : lumos) {
+      lu.moveTo();
+    }
+  }
+
+  public void turnOff() {
+    for (Lumos lu : lumos) {
+      lu.keep = false;
+    }
+  }
+
+  void controlOne(float x, float y) {
+    lumos.get(0).pos.set(x, y);
   }
 }
